@@ -1,45 +1,143 @@
+/* Global Styles
+-----------------------------------*/
 * {
-    margin:10px 0;
+  margin: 10px 0;
+  font-family: 'Fira-Code', monospace;
 }
 body {
-    padding:50px;
-    background-color:black;
-    font-family:arial;
-    color:white;
-    }
-h1{
-    font-size:40px;
-    margin-bottom:20px;
-    color:grey;
-    font-family:verdana;
-    }
+  padding: 20px;
+  font-family: arial;
+  color: white;
+  background-image: radial-gradient(transparent -200%, black),
+    url(images/stock-market-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .maindiv {
-    max-width: 800px;
-    height:auto;
-    background-color:white;
-    color:black;
-    border-radius:25px;
-    text-align:center;
-    padding:20px;
-    margin:0 auto;
+  max-width: 800px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #20c20e;
+  border: 2px solid #20c20e;
+  border-radius: 25px;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 120px;
 }
-#result {
-    display: inline-block;
-    text-align:left;
-    font-family: 'Roboto', sans-serif;
-    font-size:20px;
-    font-weight:bold;
-    margin:10px;
-    word-spacing:2px;
-}
-footer {
-    font-size:15px;
-    display: flex;
-    margin-bottom:-15px;
-    text-align:left;
-    color:black;
+input,
+button,
+select {
+  border: 2px solid #20c20e;
+  background-color: black;
+  color: #20c20e;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
 }
 
+/* Header Styles
+-----------------------------------*/
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+  color: #20c20e;
+}
+hr {
+  margin-bottom: 20px;
+  width: 75%;
+  border: 0; 
+  border-top: 1px solid #20c20e;
+  text-align: center;
+}
+
+/* intType Selector Styles
+-----------------------------------*/
+.intType {
+  margin-bottom: 0;
+}
+
+/* Compounding Div Styles
+-----------------------------------*/
+.compound-div {
+  display: none;
+}
+
+/* Rate Slider Styles
+-----------------------------------*/
+.rate-div {
+  display: flex;
+  padding: 0 20% 0 34%;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  height: 0px;
+  width: 150px;
+  background: black;
+  margin: 12px 20px;
+  padding: 5px 0px;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #20c20e;
+  cursor: pointer;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+input[type='range']::-moz-range-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #20c20e;
+  cursor: pointer;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+/* No. of Years Selector Styles
+-----------------------------------*/
+#years, 
+.year-text {
+  display: inline-block;
+}
+
+/* Compute Button Styles
+-----------------------------------*/
+button:hover {
+  background-color: rgb(7, 0, 68);
+  color: pink;
+  transition: background-color color;
+  transition-duration: 0.3s;
+}
+
+/* Result Output Styles
+-----------------------------------*/
+#result {
+  display: inline-block;
+  text-align: left;
+  font-size: 20px;
+  margin: 40px 10px 40px 25px;
+  word-spacing: 2px;
+}
 .highlight {
-    background-color:yellow;
+  background-color: rgba(96, 4, 243, 0.3);
+}
+
+/* Footer Styles
+-----------------------------------*/
+footer {
+  font-size: 15px;
+  display: flex;
+  margin-bottom: -15px;
+  text-align: left;
 }
