@@ -1,36 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Simple Interest Calculator</title>
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="maindiv">
-            <h1>Simple Interest Calculator</h1>
-            Amount <input type="number" id="principal" placeholder="Enter Principal"><br>
-            Rate <input type="range" id="rate" name="rate" min="1" max="20" value="10.25" step="0.25" oninput="amount.value=rate.value"><span id="rate_val">
-            <output id="amount" name="amount" for="rate" >10.25</output></span>%<br>
-            No. of Years 
-            <select id="years">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select><br/>
-            <button onclick="compute()">Compute Interest</button><br>
-            <span id="result"></span>
+  <head>
+    <title>Interest Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    
+    <div class="maindiv">
 
-            <footer>
-                <p>&#169; This calculator belongs to Hunter Faulkner.</p>
-            </footer>
-        </div>
-    </body>
+      <!--Heading -->
+      <div class="header">
+        <h1>Total Interest Calculator</h1>
+        <hr>
+      </div>
+
+      <!--Type of Interest (Determines Equation to Use in JS)-->
+      <div class="int-type">
+        Type of Interest
+        <select id="interest-type">
+          <option value="simple">Simple</option>
+          <option value="compound">Compound</option>
+          <option value="continuous">Continuous</option>
+        </select>
+      </div>
+
+      <!--If (intType = compound), Specify No. of Compounding Periods-->
+      <div class="compound-div">
+        <p class="year-text">No. of Compound Periods per Year</p>
+        <select id="comp">
+          <option value="1" class="compval">1</option> <!-- Annual -->
+          <option value="2" class="compval">2</option> <!-- Semi-Annualy -->
+          <option value="3" class="compval">3</option> <!-- Trimesterly -->
+          <option value="4" class="compval">4</option> <!-- Quarterly -->
+          <option value="6" class="compval">6</option> <!-- Bimonthly -->
+          <option value="12" class="compval">12</option> <!-- Monthly -->
+        </select>
+      </div>
+
+      <!-- Rate Slider -->
+      <div class="ratestyle">
+        Amount
+        <input type="number" id="principal" placeholder="Enter Principal" /><br />
+        <div class="rate-div">
+          <p class="rate-lab">Rate</p>
+          <input
+            type="range"
+            id="rate"
+            name="rate"
+            min="1"
+            max="20"
+            value="10.25"
+            step="0.25"
+            oninput="amount.value=rate.value"
+          /><span id="rate_val">
+            <output id="amount" name="amount" for="rate">10.25</output></span
+          >  
+          <p>%</p>
+        </div>  
+      </div>
+
+      <!-- No. of Years (Duration) -->
+      <div class="year-div">
+        <p class="year-text">No. of Years</p>
+        <select id="years">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+
+      <!-- Compute Interest Button -->
+      <button onclick="compute()">Compute Interest</button><br />
+      
+      <!-- JS Results -->
+      <span id="result"></span>
+
+      <!-- Footer Info -->
+      <footer>
+        <p>&#169; This calculator belongs to Hunter Faulkner.</p>
+      </footer>
+
+    </div>
+
+  </body>
 </html>
